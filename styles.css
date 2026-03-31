@@ -110,6 +110,22 @@ section {
     font-size: 1.6rem;
 }
 
+.skill-logos {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.skill-logos img {
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.skill-logos img:hover {
+    transform: scale(1.1);
+}
+
 #contato a {
     color: #ffffff;
     text-decoration: none;
