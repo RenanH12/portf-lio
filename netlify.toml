@@ -6,4 +6,8 @@
 [build.environment]
   NODE_VERSION = "18"
   NPM_FLAGS = "--no-package-lock --ignore-scripts"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
     Referrer-Policy = "strict-origin-when-cross-origin"
