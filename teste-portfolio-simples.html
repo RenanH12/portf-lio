@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Simples - Teste Animações</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Animações adicionais para teste */
+        .test-section {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pulse-effect {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio-container">
+        <nav class="navbar animate-navbar">
+            <div class="nav-content">
+                <h1 class="logo pulse-effect">PORTFÓLIO TESTE</h1>
+                <ul class="nav-menu">
+                    <li><button class="nav-link active" onclick="showSection('home')">Home</button></li>
+                    <li><button class="nav-link" onclick="showSection('projects')">Projects</button></li>
+                    <li><button class="nav-link" onclick="showSection('skills')">Skills</button></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <section id="home" class="home test-section">
+                <h1 class="animate-title">🎉 Animações Funcionando!</h1>
+                <p class="animate-text">Se você vê este texto aparecendo suavemente,<br>as animações CSS estão funcionando perfeitamente!</p>
+                <img src="./imagem/seu-foto.jpg" alt="Foto" class="profile-image animate-image" />
+            </section>
+
+            <section id="projects" class="projects test-section" style="display: none;">
+                <h2 class="animate-title">Meus Projetos</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Projeto 1</h3>
+                        <p>Descrição do projeto</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Projeto 2</h3>
+                        <p>Descrição do projeto</p>
+                    </div>
+                    <div class="project-card">
+                        <h3>Projeto 3</h3>
+                        <p>Descrição do projeto</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="skills test-section" style="display: none;">
+                <h2 class="animate-title">Minhas Habilidades</h2>
+                <ul class="skills-list">
+                    <li class="skill-tag">HTML5</li>
+                    <li class="skill-tag">CSS3</li>
+                    <li class="skill-tag">JavaScript</li>
+                    <li class="skill-tag">React</li>
+                    <li class="skill-tag">Responsividade</li>
+                    <li class="skill-tag">Programação</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 Portfólio Teste. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionName) {
+            // Esconder todas as seções
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('projects').style.display = 'none';
+            document.getElementById('skills').style.display = 'none';
+
+            // Remover classe active de todos os botões
+            document.querySelectorAll('.nav-link').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Mostrar seção selecionada
+            document.getElementById(sectionName).style.display = 'block';
+
+            // Adicionar classe active ao botão clicado
+            event.target.classList.add('active');
+        }
+
+        // Adicionar animações aos elementos quando a página carrega
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Página carregada! Animações CSS ativadas.');
+
+            // Forçar reflow para garantir que as animações funcionem
+            document.body.style.display = 'none';
+            document.body.offsetHeight; // Trigger reflow
+            document.body.style.display = '';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShaderGradient Teste</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="gradient-bg" id="shader-gradient"></div>
+
+    <div class="container">
+        <h1>🎨 ShaderGradient Funcionando!</h1>
+        <p>Se você vê um fundo animado 3D atrás deste texto,<br>o ShaderGradient está funcionando perfeitamente!</p>
+        <p>✅ Fundo gradiente animado em 3D<br>✅ Animação contínua<br>✅ Efeitos visuais avançados</p>
+    </div>
+
+    <!-- React e ShaderGradient via CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@shadergradient/react@1.4.10/umd/index.js"></script>
+
+    <script>
+        const { createRoot } = ReactDOM;
+        const ShaderGradient = window.ShaderGradientReact.ShaderGradient;
+
+        const gradientElement = React.createElement(ShaderGradient, {
+            animate: "on",
+            brightness: 0.8,
+            color1: "#006fc4",
+            color2: "#d400ff",
+            color3: "#ce0037",
+            grain: "on",
+            lightType: "env",
+            type: "sphere",
+            uSpeed: 0.1,
+            uStrength: 0.3
+        });
+
+        const root = createRoot(document.getElementById('shader-gradient'));
+        root.render(gradientElement);
+    </script>
+</body>
+</html>
