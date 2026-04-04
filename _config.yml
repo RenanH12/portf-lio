@@ -1,0 +1,14 @@
+# Configuração para deploy estático
+# Este arquivo indica que o projeto é apenas HTML/CSS/JS puro
+# Não requer instalação de dependências
+
+# Para Netlify/GitHub Pages/Vercel
+# O deploy funcionará apenas com os arquivos HTML, CSS e JS
+
+# Arquivos principais para deploy:
+# - Home.html (página inicial)
+# - Skills.html
+# - Projects.html
+# - styles.css
+# - script.js
+# - imagem/ (pasta de imagens)

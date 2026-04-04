@@ -61,9 +61,29 @@ Personalize:
 - Links de contato
 - Projetos e habilidades
 
-## 🏗️ Build para Produção
+## 🚀 Deploy em Plataformas
 
-Para produção, basta hospedar os arquivos `portfolio-final.html`, `styles.css` e `imagem/` em qualquer servidor web estático.
+### Netlify
+1. Faça upload dos arquivos: `Home.html`, `Skills.html`, `Projects.html`, `styles.css`, `script.js`, `imagem/`, `_config.yml`
+2. Configure `Home.html` como página inicial
+3. Deploy automático - sem instalação de dependências!
+
+### GitHub Pages
+1. Faça commit dos arquivos no repositório
+2. Vá em Settings → Pages
+3. Selecione branch main e pasta root
+4. Deploy automático - funciona com arquivos estáticos!
+
+### Vercel
+1. Conecte o repositório
+2. Configure `Home.html` como página inicial
+3. Deploy automático - reconhece automaticamente como projeto estático
+
+### Outras Plataformas
+Para qualquer hospedagem estática (Hostinger, 000webhost, etc.):
+- Faça upload apenas dos arquivos HTML, CSS e imagens
+- Configure `Home.html` como página inicial
+- **Não** tente instalar dependências - não são necessárias!
 
 ## 🛠️ Tecnologias
 
