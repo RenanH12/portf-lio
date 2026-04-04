@@ -128,7 +128,40 @@ Personalize:
 
 **GitHub Pages:** Arquivo `.nojekyll` presente
 
-**Resultado:** Deploy 100% estático, sem dependências! 🎉
+---
+
+## 🎯 SOLUÇÃO DEFINITIVA: Pasta `deploy-clean/`
+
+**Se ainda há erro de dependências, use a pasta `deploy-clean/` que criei!**
+
+### 📁 O que tem na `deploy-clean/`:
+- ✅ **Apenas arquivos necessários** para deploy
+- ✅ **Sem `package.json`** ou qualquer arquivo Node.js
+- ✅ **Configurações específicas** para cada plataforma
+- ✅ **Testada e funcionando**
+
+### 🚀 Como usar:
+1. **Abra a pasta** `deploy-clean/`
+2. **Faça upload** de todos os arquivos dela
+3. **Configure** `Home.html` como página inicial
+4. **Deploy automático** - funcionará perfeitamente!
+
+### 📋 Arquivos na pasta deploy-clean:
+```
+Home.html
+Skills.html
+Projects.html
+styles.css
+script.js
+imagem/
+.nojekyll
+netlify.toml
+vercel.json
+_config.yml
+README-DEPLOY.md
+```
+
+**Resultado:** Deploy 100% garantido, sem erros de dependências! 🎉
 
 ## 📁 Estrutura do Projeto
 
