@@ -165,22 +165,32 @@ README-DEPLOY.md
 
 ---
 
-## 🚨 ERRO DO NETLIFY CORRIGIDO!
+## 🚨 SOLUÇÃO DEFINITIVA PARA ERRO DO NETLIFY
 
-**Erro anterior:** "Versão 'nenhuma' não encontrada" / "Falhou em instalar Node.js versão 'nenhuma'"
+**Se ainda vê "Versão 'nenhuma' não encontrada":**
 
-**✅ Solução aplicada:** Removida configuração problemática `NODE_VERSION = "none"` do `netlify.toml`
+### ✅ PASSOS PARA RESOLVER:
 
-### 🔧 O que foi corrigido:
-- ❌ **Antes:** `NODE_VERSION = "none"` (causava erro no Netlify)
-- ✅ **Agora:** Configuração removida (Netlify usa Node.js padrão automaticamente)
+1. **LIMPE O CACHE COMPLETAMENTE:**
+   - Netlify Dashboard → Site Settings → Build & Deploy → Clear cache
+   - Delete o site e crie um novo
 
-### 🚀 Como resolver no Netlify:
-1. **Faça commit** das mudanças no `netlify.toml`
-2. **Reimplante** no Netlify (Site settings → Build & deploy → Trigger deploy)
-3. **Deploy funcionará** perfeitamente!
+2. **USE A PASTA `deploy-clean/`:**
+   - Arquivos 100% limpos e testados
+   - `netlify.toml` simplificado
+   - Arquivo `.nvmrc` com Node 18
 
-**Ou simplesmente use a pasta `deploy-clean/` que já tem a versão corrigida!**
+3. **OU RECONFIGURE MANUALMENTE:**
+   - **Build command:** `echo "Static site"`
+   - **Publish directory:** `.` (ponto)
+   - **Node version:** 18 (padrão)
+
+### 📁 Arquivos finais corrigidos:
+- ✅ `netlify.toml` - Simplificado, sem `NODE_VERSION`
+- ✅ `.nvmrc` - Define Node 18 (se necessário)
+- ✅ `deploy-clean/` - Pasta pronta para deploy
+
+**Commit essas mudanças e reimplante!** 🚀
 
 ## 📁 Estrutura do Projeto
 

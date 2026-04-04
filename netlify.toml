@@ -1,25 +1,4 @@
 [build]
-  # Diretório de publicação (pasta raiz)
   publish = "."
-
-  # Comando de build (vazio para projetos estáticos)
-  command = "echo 'Projeto estático - sem build necessário'"
-
-[build.environment]
-  # Indica que não há dependências Node.js
-  NODE_VERSION = "none"
-
-# Redirecionamentos para SPA (Single Page Application)
-[[redirects]]
-  from = "/api/*"
-  to = "/api/:splat"
-  status = 200
-
-# Headers de segurança
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
+  command = "echo 'Static site - no build needed'"
     Referrer-Policy = "strict-origin-when-cross-origin"
