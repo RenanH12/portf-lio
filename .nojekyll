@@ -1,0 +1,8 @@
+# Este arquivo indica que o projeto é apenas HTML/CSS/JS puro
+# Não requer instalação de dependências Node.js
+# Compatível com GitHub Pages, Netlify, Vercel, etc.
+
+# Para plataformas de deploy estático:
+# - Não execute scripts de instalação de dependências
+# - Sirva apenas os arquivos HTML, CSS e JS diretamente
+# - Use Home.html como página inicial

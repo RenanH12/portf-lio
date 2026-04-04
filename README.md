@@ -61,29 +61,33 @@ Personalize:
 - Links de contato
 - Projetos e habilidades
 
-## 🚀 Deploy em Plataformas
+## � Problema de Deploy Resolvido
 
-### Netlify
-1. Faça upload dos arquivos: `Home.html`, `Skills.html`, `Projects.html`, `styles.css`, `script.js`, `imagem/`, `_config.yml`
-2. Configure `Home.html` como página inicial
-3. Deploy automático - sem instalação de dependências!
+**Se você ainda vê o erro "dependency_installation script retornou código de saída não nulo: 1":**
 
-### GitHub Pages
-1. Faça commit dos arquivos no repositório
-2. Vá em Settings → Pages
-3. Selecione branch main e pasta root
-4. Deploy automático - funciona com arquivos estáticos!
+### ✅ Solução:
+1. **Certifique-se de fazer deploy APENAS dos arquivos listados abaixo**
+2. **Limpe o cache da plataforma de deploy**
+3. **Reinicie o deploy do zero**
 
-### Vercel
-1. Conecte o repositório
-2. Configure `Home.html` como página inicial
-3. Deploy automático - reconhece automaticamente como projeto estático
+### 📁 Arquivos OBRIGATÓRIOS para deploy:
+- ✅ `Home.html` - Página inicial
+- ✅ `Skills.html` - Página de habilidades
+- ✅ `Projects.html` - Página de projetos
+- ✅ `styles.css` - Estilos com animações
+- ✅ `script.js` - JavaScript (opcional)
+- ✅ `imagem/` - Pasta de imagens
+- ✅ `_config.yml` - Configuração
+- ✅ `.nojekyll` - Para GitHub Pages
+- ✅ `netlify.toml` - Para Netlify
+- ✅ `vercel.json` - Para Vercel
 
-### Outras Plataformas
-Para qualquer hospedagem estática (Hostinger, 000webhost, etc.):
-- Faça upload apenas dos arquivos HTML, CSS e imagens
-- Configure `Home.html` como página inicial
-- **Não** tente instalar dependências - não são necessárias!
+### ❌ NÃO inclua estes arquivos no deploy:
+- ❌ `package.json` (renomeado para .backup)
+- ❌ `vite.config.js` (renomeado para .backup)
+- ❌ `App.jsx`, `main.jsx`, `index.html` (removidos)
+- ❌ Qualquer arquivo `.backup`
+- ❌ Pasta `node_modules/` (não existe mais)
 
 ## 🛠️ Tecnologias
 
@@ -94,7 +98,37 @@ Para qualquer hospedagem estática (Hostinger, 000webhost, etc.):
 
 ---
 
-**🎉 Pronto!** Seu portfólio com gradiente animado está funcionando perfeitamente!
+## 🚨 Resolução do Erro de Deploy
+
+**Erro:** "dependency_installation script retornou código de saída não nulo: 1"
+
+**Causa:** Plataforma tentando instalar dependências Node.js desnecessárias
+
+### ✅ Solução Rápida:
+1. **Limpe o cache** da plataforma de deploy
+2. **Reinicie o deploy** do zero
+3. **Certifique-se** de usar apenas os arquivos obrigatórios
+
+### 📁 Arquivos para Deploy (APENAS estes):
+- `Home.html`, `Skills.html`, `Projects.html`
+- `styles.css`, `script.js`
+- `imagem/` (pasta)
+- `.nojekyll`, `netlify.toml`, `vercel.json`
+
+### ❌ NÃO incluir:
+- `package.json.backup`, `vite.config.js.backup`
+- Arquivos `.jsx`, `.backup`
+- Qualquer pasta `node_modules`
+
+### 🔧 Configurações por Plataforma:
+
+**Netlify:** Build command vazio, Publish directory: "."
+
+**Vercel:** Framework: "Other", Build command vazio
+
+**GitHub Pages:** Arquivo `.nojekyll` presente
+
+**Resultado:** Deploy 100% estático, sem dependências! 🎉
 
 ## 📁 Estrutura do Projeto
 
