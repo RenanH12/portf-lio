@@ -163,6 +163,25 @@ README-DEPLOY.md
 
 **Resultado:** Deploy 100% garantido, sem erros de dependências! 🎉
 
+---
+
+## 🚨 ERRO DO NETLIFY CORRIGIDO!
+
+**Erro anterior:** "Versão 'nenhuma' não encontrada" / "Falhou em instalar Node.js versão 'nenhuma'"
+
+**✅ Solução aplicada:** Removida configuração problemática `NODE_VERSION = "none"` do `netlify.toml`
+
+### 🔧 O que foi corrigido:
+- ❌ **Antes:** `NODE_VERSION = "none"` (causava erro no Netlify)
+- ✅ **Agora:** Configuração removida (Netlify usa Node.js padrão automaticamente)
+
+### 🚀 Como resolver no Netlify:
+1. **Faça commit** das mudanças no `netlify.toml`
+2. **Reimplante** no Netlify (Site settings → Build & deploy → Trigger deploy)
+3. **Deploy funcionará** perfeitamente!
+
+**Ou simplesmente use a pasta `deploy-clean/` que já tem a versão corrigida!**
+
 ## 📁 Estrutura do Projeto
 
 ```
