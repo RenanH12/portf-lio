@@ -1,0 +1,81 @@
+⚡ QUICK START - Portfólio React com ShaderGradient
+
+═══════════════════════════════════════════════════════════════
+
+📦 PASSO 1: Instalar Dependências (Primeira vez)
+───────────────────────────────────────────────
+
+Abra o PowerShell nesta pasta e execute:
+
+    npm install
+
+Isso vai instalar React, Vite, ShaderGradient e tudo que você precisa.
+
+═══════════════════════════════════════════════════════════════
+
+🚀 PASSO 2: Rodar o Projeto
+────────────────────────────
+
+Execute:
+
+    npm run dev
+
+O navegador abrirá automaticamente em http://localhost:3000
+
+═══════════════════════════════════════════════════════════════
+
+🎨 O QUE VOCÊ VAI VER:
+──────────────────────
+
+✨ Fundo animado em 3D com ShaderGradient (azul, roxo, pink)
+📍 Navegação interativa (Home, Projects, Skills)
+⚡ Animações suaves ao trocar de seção
+🎯 Design responsivo para mobile
+
+═══════════════════════════════════════════════════════════════
+
+🛑 POR QUE NÃO USA APENAS HTML?
+────────────────────────────────
+
+A biblioteca ShaderGradient requer build tools para funcionar,
+por isso precisamos do Vite + npm.
+
+Se quiser usar apenas HTML sem build tools, use o index.html
+antigo (versão com Gradiente CSS simples).
+
+═══════════════════════════════════════════════════════════════
+
+💾 ARQUIVOS PRINCIPAIS:
+──────────────────────
+
+App.jsx          ← Seu componente React com ShaderGradient
+styles.css       ← Estilos e animações CSS
+package.json     ← Configuração de dependências
+vite.config.js   ← Configuração do Vite
+main.jsx         ← Entry point do React
+
+═══════════════════════════════════════════════════════════════
+
+🔧 CUSTOMIZAR CORES DO ShaderGradient:
+──────────────────────────────────────
+
+Abra App.jsx e procure por <ShaderGradient ... />
+
+Altere estas props:
+- color1="#006fc4"  (azul)
+- color2="#d400ff"  (roxo)
+- color3="#ce0037"  (rosa/vermelho)
+
+═══════════════════════════════════════════════════════════════
+
+📚 PARA MAIS INFORMAÇÕES:
+────────────────────────
+
+Leia o README.md para instruções completas de deployment,
+troubleshooting e customização avançada.
+
+═══════════════════════════════════════════════════════════════
+
+✅ Pronto? Execute: npm run dev
+
+Aproveitando seu portfólio! 🚀
