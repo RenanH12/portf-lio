@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio - React</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- React via CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Seu aplicativo React -->
+    <script type="module">
+        const { useState } = React;
+        const { createRoot } = ReactDOM;
+
+        function Portfolio() {
+            const [activeSection, setActiveSection] = useState('home');
+
+            const menuItems = ['home', 'projects', 'skills'];
+
+            const projects = [
+                { id: 1, title: 'Projeto 1', description: 'Descrição do projeto' },
+                { id: 2, title: 'Projeto 2', description: 'Descrição do projeto' },
+                { id: 3, title: 'Projeto 3', description: 'Descrição do projeto' },
+            ];
+
+            const skills = [
+                'HTML5',
+                'CSS3',
+                'JavaScript',
+                'React',
+                'Responsividade',
+                'Programação',
+            ];
+
+            const renderSection = () => {
+                switch (activeSection) {
+                    case 'home':
+                        return React.createElement(
+                            'section',
+                            { className: 'home fade-in' },
+                            React.createElement('h1', { className: 'animate-title' }, 'Bem-vindo ao Meu Portfólio'),
+                            React.createElement('p', { className: 'animate-text' }, 'Desenvolvedor Full Stack apaixonado por criar soluções inovadoras'),
+                            React.createElement('img', { 
+                                src: './imagem/seu-foto.jpg', 
+                                alt: 'Sua foto', 
+                                className: 'profile-image animate-image' 
+                            })
+                        );
+
+                    case 'projects':
+                        return React.createElement(
+                            'section',
+                            { className: 'projects fade-in' },
+                            React.createElement('h2', { className: 'animate-title' }, 'Meus Projetos'),
+                            React.createElement(
+                                'div',
+                                { className: 'projects-grid' },
+                                projects.map((project, index) =>
+                                    React.createElement(
+                                        'div',
+                                        { 
+                                            key: project.id, 
+                                            className: 'project-card',
+                                            style: { animationDelay: `${index * 0.1}s` }
+                                        },
+                                        React.createElement('h3', null, project.title),
+                                        React.createElement('p', null, project.description)
+                                    )
+                                )
+                            )
+                        );
+
+                    case 'skills':
+                        return React.createElement(
+                            'section',
+                            { className: 'skills fade-in' },
+                            React.createElement('h2', { className: 'animate-title' }, 'Minhas Habilidades'),
+                            React.createElement(
+                                'ul',
+                                { className: 'skills-list' },
+                                skills.map((skill, index) =>
+                                    React.createElement(
+                                        'li',
+                                        { 
+                                            key: index, 
+                                            className: 'skill-tag',
+                                            style: { animationDelay: `${index * 0.05}s` }
+                                        },
+                                        skill
+                                    )
+                                )
+                            )
+                        );
+
+                    default:
+                        return null;
+                }
+            };
+
+            return React.createElement(
+                'div',
+                { className: 'portfolio-container' },
+                React.createElement(
+                    'nav',
+                    { className: 'navbar animate-navbar' },
+                    React.createElement(
+                        'div',
+                        { className: 'nav-content' },
+                        React.createElement('h1', { className: 'logo' }, 'MEU PORTFÓLIO'),
+                        React.createElement(
+                            'ul',
+                            { className: 'nav-menu' },
+                            menuItems.map((item) =>
+                                React.createElement(
+                                    'li',
+                                    { key: item },
+                                    React.createElement(
+                                        'button',
+                                        {
+                                            onClick: () => setActiveSection(item),
+                                            className: `nav-link ${activeSection === item ? 'active' : ''}`
+                                        },
+                                        item.charAt(0).toUpperCase() + item.slice(1)
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ),
+                React.createElement(
+                    'main',
+                    { className: 'main-content' },
+                    renderSection()
+                ),
+                React.createElement(
+                    'footer',
+                    { className: 'footer' },
+                    React.createElement('p', null, '© 2026 Meu Portfólio. Todos os direitos reservados.'),
+                    React.createElement('p', null, 'Email: seu@email.com | Telefone: (XX) XXXXX-XXXX')
+                )
+            );
+        }
+
+        const root = createRoot(document.getElementById('root'));
+        root.render(React.createElement(Portfolio));
+    </script>
+</body>
+</html>

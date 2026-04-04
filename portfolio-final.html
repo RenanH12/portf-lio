@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Completo - Gradiente Animado</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Fundo animado com gradiente CSS */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(-45deg, #006fc4, #8400ff, #ff00ff, #0bc9eb);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Efeitos adicionais para tornar mais dinâmico */
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: lightMove 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes lightMove {
+            0% {
+                transform: scale(1) rotate(0deg);
+                opacity: 0.3;
+            }
+            100% {
+                transform: scale(1.2) rotate(180deg);
+                opacity: 0.6;
+            }
+        }
+
+        .content-overlay {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            backdrop-filter: blur(0.5px);
+        }
+
+        /* Animações das seções */
+        .fade-in-section {
+            animation: fadeInSection 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInSection {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fundo animado CSS -->
+    <div class="animated-bg"></div>
+
+    <!-- Conteúdo do portfólio -->
+    <div class="content-overlay">
+        <div class="portfolio-container">
+            <nav class="navbar animate-navbar">
+                <div class="nav-content">
+                    <h1 class="logo">MEU PORTFÓLIO</h1>
+                    <ul class="nav-menu">
+                        <li><button class="nav-link active" onclick="showSection('home')">Home</button></li>
+                        <li><button class="nav-link" onclick="showSection('projects')">Projects</button></li>
+                        <li><button class="nav-link" onclick="showSection('skills')">Skills</button></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="main-content">
+                <section id="home" class="home fade-in-section">
+                    <h1 class="animate-title">Bem-vindo ao Meu Portfólio</h1>
+                    <p class="animate-text">Desenvolvedor Full Stack apaixonado por criar soluções inovadoras</p>
+                    <img src="./imagem/seu-foto.jpg" alt="Sua foto" className="profile-image animate-image" />
+                </section>
+
+                <section id="projects" class="projects fade-in-section" style="display: none;">
+                    <h2 class="animate-title">Meus Projetos</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>Projeto 1</h3>
+                            <p>Descrição do projeto</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Projeto 2</h3>
+                            <p>Descrição do projeto</p>
+                        </div>
+                        <div class="project-card">
+                            <h3>Projeto 3</h3>
+                            <p>Descrição do projeto</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="skills" class="skills fade-in-section" style="display: none;">
+                    <h2 className="animate-title">Minhas Habilidades</h2>
+                    <ul class="skills-list">
+                        <li class="skill-tag">HTML5</li>
+                        <li class="skill-tag">CSS3</li>
+                        <li class="skill-tag">JavaScript</li>
+                        <li class="skill-tag">React</li>
+                        <li class="skill-tag">Responsividade</li>
+                        <li class="skill-tag">Programação</li>
+                    </ul>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <p>&copy; 2026 Meu Portfólio. Todos os direitos reservados.</p>
+                <p>Email: seu@email.com | Telefone: (XX) XXXXX-XXXX</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- JavaScript para navegação -->
+    <script>
+        // Função para alternar seções
+        function showSection(sectionName) {
+            // Esconder todas as seções
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('projects').style.display = 'none';
+            document.getElementById('skills').style.display = 'none';
+
+            // Remover classe active de todos os botões
+            document.querySelectorAll('.nav-link').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Mostrar seção selecionada
+            document.getElementById(sectionName).style.display = 'block';
+
+            // Adicionar classe active ao botão clicado
+            event.target.classList.add('active');
+        }
+
+        // Log para confirmar que carregou
+        console.log('🎨 Portfólio com gradiente animado carregado!');
+        console.log('✅ Fundo animado CSS ativo');
+    </script>
+</body>
+</html>
