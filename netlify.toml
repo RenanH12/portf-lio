@@ -1,13 +1,3 @@
 [build]
-  publish = "."
-  command = "echo 'Static HTML/CSS/JS site - no build needed'"
-  ignore = ["package.json", "package-lock.json", "node_modules/"]
-
-[build.environment]
-  NODE_VERSION = "18"
-  NPM_FLAGS = "--no-package-lock --ignore-scripts"
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Referrer-Policy = "strict-origin-when-cross-origin"
+publish = "."
+command = "echo 'Static HTML/CSS/JS site - no build needed'"
